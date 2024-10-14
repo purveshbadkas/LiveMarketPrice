@@ -8,7 +8,8 @@ function fetchData(page = 0) {
   // Display a loading message
   tableBody.innerHTML = "<tr><td colspan='10'>Loading...</td></tr>";
 
-  fetch(`http://localhost:3000/api/data?page=${page}`) // URL of your backend API with pagination
+  // Update the fetch URL to your Render URL
+  fetch(`https://livemarketprice.onrender.com/api/data?page=${page}`) // URL of your backend API with pagination
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");

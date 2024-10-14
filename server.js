@@ -1,10 +1,9 @@
 const express = require("express");
 const axios = require("axios");
 const path = require("path");
-
 const cors = require("cors");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use the environment port for Render or default to 3000
 const API_KEY = "579b464db66ec23bdd000001d7b3d28e8a0142b96a2c476261a364f9";
 
 // Use CORS middleware
@@ -13,6 +12,12 @@ app.use(cors());
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "public")));
 
+// Route to serve the index.html file
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+// API endpoint to fetch data
 app.get("/api/data", async (req, res) => {
   try {
     const limit = 4500; // Number of records per request
@@ -51,6 +56,7 @@ app.get("/api/data", async (req, res) => {
   }
 });
 
+// Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
