@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commodity Data Display</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Commodity Prices</h1>
+ <div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>State</th>
+        <th>District</th>
+        <th>Market</th>
+        <th>Commodity</th>
+        <th>Variety</th>
+        <th>Grade</th>
+        <th>Arrival Date</th>
+        <th>Min Price</th>
+        <th>Max Price</th>
+        <th>Modal Price</th>
+      </tr>
+    </thead>
+  </table>
+  <div class="table-scroll">
+    <table>
+      <tbody id="table-body">
+        <!-- Data rows will be populated here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
