@@ -10,19 +10,26 @@ h1 {
     text-align: center;
     color: #4b5320;
 }
-
 .search-container {
     display: flex;
-    justify-content: flex-end; /* Align search inputs to the right */
-    margin-bottom: 10px; /* Space below search bar */
+    justify-content: flex-end; /* Align inputs to the right */
+    margin: 20px 0; /* Space above and below */
 }
 
-.search-container input {
-    margin-left: 10px; /* Space between search inputs */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.search-input {
+    margin-left: 10px; /* Space between inputs */
+    padding: 10px; /* Padding for better touch target */
+    border: 1px solid #6b4226; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    transition: border-color 0.3s; /* Smooth transition for focus */
 }
+
+.search-input:focus {
+    border-color: #2e8b57; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+
 
 .table-container {
     height: 400px; /* Fixed height for the container */
